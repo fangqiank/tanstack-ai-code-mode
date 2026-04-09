@@ -32,6 +32,7 @@
     "@tanstack/store": "latest",
     "highlight.js": "^11.11.1",
     "lucide-react": "^0.577.0",
+    "openai": "^6.34.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "streamdown": "^2.3.0",
