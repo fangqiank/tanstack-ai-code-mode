@@ -1,7 +1,7 @@
 import {createFileRoute} from "@tanstack/react-router";
 import {chat, toServerSentEventsResponse} from "@tanstack/ai";
 import {createCodeMode} from "@tanstack/ai-code-mode";
-import {createQuickJSIsolateDriver} from "@tanstack/ai-isolate-quickjs";
+import {createNodeIsolateDriver} from "../../server/node-isolate-driver";
 import {DeepSeekTextAdapter} from "../../server/deepseek-adapter";
 import {
   getTopProducts,
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/api/chat")({
           // 创建 Code Mode 实例
           const {tool: codeModeTool, systemPrompt: codeModePrompt} =
             createCodeMode({
-              driver: createQuickJSIsolateDriver(),
+              driver: createNodeIsolateDriver(),
               tools: [getTopProducts, getProductRatings, calculateStats],
               timeout: 30000,
             });
